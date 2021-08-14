@@ -1,0 +1,29 @@
+void sort012(int arr[], int n)
+{
+    int count0 = 0, ind = 0, count2 = n-1;
+    
+    while(ind <= count2)
+    {
+        switch(arr[ind])
+        {
+            case 0:
+                swap(arr[count0], arr[ind]);
+                count0++;
+                ind++;
+                break;
+                
+            case 1:
+                ind++;
+                break;
+                
+            case 2:
+                swap(arr[ind], arr[count2]);
+                count2--;
+                break;
+        }
+    }
+}
+// O(n)
+
+//Another Approach 
+https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
