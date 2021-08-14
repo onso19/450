@@ -1,0 +1,69 @@
+1//
+   int doUnion(int a[], int n, int b[], int m)  {
+  unordered_map <int,int> mp;
+        for(int i=0;i<n;i++){
+            mp[a[i]]++;
+        }
+        for(int i=0;i<m;i++)
+    {
+        mp[b[i]]++;
+    }
+        return mp.size();
+    }
+};
+
+2//
+int doUnion(int a[], int n, int b[], int m)  {
+        
+        unordered_set<int> st;
+        
+        st.insert(a, a + n);
+        st.insert(b, b + m);
+        
+        return st.size();
+}
+
+3//  INTERSECTION
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+      // put the values in set to remove duplicate
+        set<int>s1,s2;
+        vector<int>out;
+        for(auto val:nums1)
+            s1.insert(val);
+        for(auto val:nums2)
+            s2.insert(val);
+        
+        //find if we can get the value from first set in second set
+        for(auto val:s1)
+        {
+           if(s2.find(val)!=s2.end()) //if found push it into output vector
+               out.push_back(val);
+        }
+        return out;
+    }
+};
+
+4//
+class Solution 
+{
+        public:
+        vector<int> intersection(vector<int>& nums1, vector<int>& nums2) 
+        {
+                int i;
+                vector <int> v1;
+                map <int,int> m1;
+                for(i=0;i<nums1.size();i++)
+                        m1[nums1[i]]=1;     
+                for(i=0;i<nums2.size();i++)
+                {
+                        if(m1[nums2[i]]==1)  
+                        {
+                                v1.push_back(nums2[i]);
+                                m1[nums2[i]]=0;  
+                        }
+                }
+                return v1;
+        }
+};
