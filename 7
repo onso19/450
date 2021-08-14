@@ -1,0 +1,28 @@
+void rotate(int arr[], int n)
+{
+int t=arr[n-1];
+for(int i=n-1;i>0;i--){
+    arr[i]=arr[i-1];
+}
+arr[0]=t;
+    
+}
+
+//Rotate an array k times tle approach
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+       for(int i=0;i<k;i++)
+       {
+int t=nums[nums.size()-1];
+for(int i=nums.size()-1;i>0;i--){
+    nums[i]=nums[i-1];
+}
+nums[0]=t;
+    
+       }
+    }
+};
+
+//https://leetcode.com/problems/rotate-array/discuss/723103/C%2B%2B-oror-Easy-to-understand-oror-Multiple-Approaches
+//https://leetcode.com/problems/rotate-array/
