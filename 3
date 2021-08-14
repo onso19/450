@@ -1,0 +1,24 @@
+1//
+int kthSmallest(int arr[], int l, int r, int k)
+    { 
+        sort(arr,arr+n);
+        return arr[k-1];
+    }
+    
+    
+ 2// using max heap
+ 
+ 
+ int kthSmallest(int arr[], int l, int r, int k) {
+//code here
+priority_queue<int> mxhp;
+for(int i=l;i<=r;i++){
+mxhp.push(arr[i]);
+if(mxhp.size()>k){
+mxhp.pop();
+}
+}
+return mxhp.top();
+}
+
+//https://www.geeksforgeeks.org/kth-smallest-element-in-the-array-using-constant-space-when-array-cant-be-modified/
